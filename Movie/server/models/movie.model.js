@@ -14,7 +14,10 @@ const MovieSchema = new mongoose.Schema({
         required: [true, 'You must add a director'],
         minLength: [3, "The director's name must be at least 3 characters"]
     },
-    duration: {type: String,
+    releaseYear: {type: Number,
+        required: [true, 'You must add a release year'],
+    },
+    duration: {type: Number,
         required: [true, 'You must add a duration'],
         min: [15, 'Duration must be at least 15 minutes']
     },

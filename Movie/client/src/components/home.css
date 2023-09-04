@@ -1,0 +1,24 @@
+.moviePoster:hover{
+  border: solid 3px rgb(255, 0, 212);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.596);
+  transition: margin 0.2s ease-in-out;
+  margin-top: -10px;
+  margin-right: 15px;
+}
+
+.moviePoster{
+  height: 310px;
+  width:  200px;
+}
+
+.movieRow{
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  /* justify-content: center; */
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
