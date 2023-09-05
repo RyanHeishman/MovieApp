@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import './one.css'
 
 const DisplayOne = (props) => {
-
+    
     const [movie, setMovie] = useState({})
 
     const navigate = useNavigate()
@@ -30,17 +30,23 @@ const DisplayOne = (props) => {
             })
     }
 
+
     return (
-        <div>
+        <div className="bodyOne">
             <h1>{movie.title}</h1>
-            <h6>{movie.releaseYear} • {movie.rating} • {movie.duration}m</h6>
+            <h6 className="info">{movie.releaseYear} • {movie.rating} • {movie.duration}m</h6>
             <img className="poster" src={movie.poster} alt={movie.title} />
-            <h6>{movie.genre}</h6>
+            <div className="genreCirclePrnt">
+                <h6 className="genreCircle">{movie.genre}</h6>
+            </div>
             <h6>{movie.description}</h6>
+            <hr />
             <h6>Directed By: {movie.director}</h6>
+            <hr />
             <div>
-                <button className="bg-danger" type="submit" onClick={() => deleteHandler(movie._id)}>Watched</button>
-                <Link to={`edit`}><button>Update Movie</button></Link>
+                <button className="btn btn-danger" type="submit" onClick={() => deleteHandler(movie._id)}>Watched</button>
+                <h6>▪</h6>
+                <Link to={`edit`}><button className="btn btn-secondary">Update Movie</button></Link>
             </div>
         </div>
     )

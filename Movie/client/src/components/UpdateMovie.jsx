@@ -51,7 +51,7 @@ const UpdateMovie = (props) => {
             <form onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="title">Title:</label>
-                    <input type="text" name="title" value={movie.title} onChange={handleMovie} />
+                    <input placeholder={movie.title} type="text" name="title" value={movie.title} onChange={handleMovie} />
                 </div>
                 {
                     errors.title ?
@@ -61,13 +61,13 @@ const UpdateMovie = (props) => {
 
                 <div>
                     <label htmlFor="genre">Genre:</label>
-                    <select placeholder="-- select an option" type="select" name="genre" value={movie.genre} onChange={handleMovie}>
-                        <option selected value="s"> -- select an option -- </option>
-                        <option value="action">Action</option>
-                        <option value="sci-fi">Sci-fi</option>
-                        <option value="comedy">Comedy</option>
-                        <option value="romance">Romance</option>
-                        <option value="drama">Drama</option>
+                    <select placeholder={movie.genre} type="select" name="genre" value={movie.genre} onChange={handleMovie}>
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Sci-fi">Sci-fi</option>
                     </select>
                 </div>
                 {
@@ -110,7 +110,7 @@ const UpdateMovie = (props) => {
                 <div>
                     <label htmlFor="rating">Rating:</label>
                     <select type="text" name="rating" value={movie.rating} onChange={handleMovie}>
-                        <option disabled selected value> -- select an option -- </option>
+                        <option selected value> -- select an option -- </option>
                         <option value="G">G</option>
                         <option value="PG">PG</option>
                         <option value="PG-13">PG-13</option>
@@ -144,7 +144,7 @@ const UpdateMovie = (props) => {
                         null
                 }
 
-                <button type="submit">Add Movie</button>
+                <button type="submit">Update Movie</button>
             </form>
         </div>
     )

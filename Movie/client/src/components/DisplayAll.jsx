@@ -18,107 +18,84 @@ const DisplayAll = (props) => {
     }, [])
     
     return (
-        <div>
-            <Link to={'/movies/add'}>Add Movie</Link>
-            
+        <div className='body'>
+            <div className='addMovie'>
+                <Link className='addMovieLink' to={'/movies/add'}>Add Movie</Link>
+            </div>
+            <hr />
             <h1>Action</h1>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
-                    movie.genre === 'action' ?
+                    movie.genre === 'Action' ?
                     <div>
                         <div className='m-2'>
-                        {/* <p className='movieTitle'><Link to={`${movie._id}`}>{movie.title}</Link></p> */}
-                            {/* <p>{movie.genre}</p>
-                            <p>{movie.director}</p>
-                            <p>{movie.duration}</p>
-                            <p>{movie.rating}</p>
-                            <p>{movie.description}</p> */}
                             <Link to={`${movie._id}`}><img className='moviePoster' src={movie.poster} alt="Movie Poster" /></Link>
+                            <h6>{movie.title}</h6>
                         </div>
                     </div> :
                     null
                 ))
             }
             </div>
-            
+            <hr />
             <h1>Comedy</h1>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
-                    movie.genre === 'comedy' ?
+                    movie.genre === 'Comedy' ?
                     <div>
                         <div className='m-2'>
-                        {/* <p><Link to={`${movie._id}`}>{movie.title}</Link></p> */}
-                            {/* <p>{movie.genre}</p>
-                            <p>{movie.director}</p>
-                            <p>{movie.duration}</p>
-                            <p>{movie.rating}</p>
-                            <p>{movie.description}</p> */}
                             <Link to={`${movie._id}`}><img className='moviePoster' src={movie.poster} alt="Movie Poster" /></Link>
+                            <h6>{movie.title}</h6>
                         </div>
                     </div> :
                     null
                 ))
             }
             </div>
-
+            <hr />
             <h1>Drama</h1>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
-                    movie.genre === 'drama' ?
+                    movie.genre === 'Drama' ?
                     <div>
                         <div className='m-2'>
-                            {/* <p><Link to={`${movie._id}`}>{movie.title}</Link></p> */}
-                            {/* <p>{movie.genre}</p>
-                            <p>{movie.director}</p>
-                            <p>{movie.duration}</p>
-                            <p>{movie.rating}</p>
-                            <p>{movie.description}</p> */}
                             <Link to={`${movie._id}`}><img className='moviePoster' src={movie.poster} alt="Movie Poster" /></Link>
+                            <h6>{movie.title}</h6>
                         </div>
                     </div> :
                     null
                 ))
             }
             </div>
-            
+            <hr />
             <h1>Sci-fi</h1>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
-                    movie.genre === 'sci-fi' ?
+                    movie.genre === 'Sci-fi' ?
                     <div>
                         <div className='m-2'>
-                            {/* <p><Link to={`${movie._id}`}>{movie.title}</Link></p> */}
-                            {/* <p>{movie.genre}</p>
-                            <p>{movie.director}</p>
-                            <p>{movie.duration}</p>
-                            <p>{movie.rating}</p>
-                            <p>{movie.description}</p> */}
                             <Link to={`${movie._id}`}><img className='moviePoster' src={movie.poster} alt="Movie Poster" /></Link>
+                            <h6>{movie.title}</h6>
                         </div>
                     </div> :
                     null
                 ))
             }
             </div>
-
+            <hr />
             <h1>Horror</h1>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
-                    movie.genre === 'horror' ?
+                    movie.genre === 'Horror' ?
                     <div>
                         <div className='m-2'>
-                            {/* <p><Link to={`${movie._id}`}>{movie.title}</Link></p> */}
-                            {/* <p>{movie.genre}</p>
-                            <p>{movie.director}</p>
-                            <p>{movie.duration}</p>
-                            <p>{movie.rating}</p>
-                            <p>{movie.description}</p> */}
                             <Link to={`${movie._id}`}><img className='moviePoster' src={movie.poster} alt="Movie Poster" /></Link>
+                            <h6>{movie.title}</h6>
                         </div>
                     </div> :
                     null

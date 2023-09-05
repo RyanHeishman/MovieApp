@@ -5,14 +5,14 @@ import MovieForm from './components/MovieForm'
 import DisplayAll from './components/DisplayAll'
 import UpdateMovie from './components/UpdateMovie'
 import DisplayOne from './components/DisplayOne'
+import Nav from './components/Nav'
 
 function App() {
 
   return (
     <>
     <BrowserRouter>
-      <h1>Let's Watch</h1>
-      <hr />
+      <Nav/>
       <Routes>
         <Route element={<MovieForm/>} path="/movies/add"/>
         <Route element={<DisplayAll/>} path="/movies"/>

@@ -1,4 +1,34 @@
-.poster {
-    height: 510px;
-    width:  400px;
+.bodyOne {
+    text-align: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
+
+.poster {
+    height: 410px;
+    width:  300px;
+}
+
+.info {
+    color: rgba(245, 245, 245, 0.637);
+}
+
+.genreCirclePrnt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.genreCircle {
+    border: 1px solid rgba(245, 245, 245, 0.411);
+    border-radius: 40px;
+    width: 70px;
+    height: 30px;
+    padding: 6px;
+    align-items: center;
+    font-size: 14px;
+
+}
+
