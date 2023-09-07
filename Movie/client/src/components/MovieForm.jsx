@@ -39,11 +39,13 @@ const MovieForm = (props) => {
     }
 
     return (
-        <div className="bodyForm">
-            <h1>Add a movie</h1>
+        <div className="mainBody">
+          <div className="bodyForm">
             <form onSubmit={submitHandler}>
+            <h4>Add Movie</h4>
                 <div>
-                    <input placeholder="Title" type="text" name="title" value={movie.title} onChange={handleMovie} />
+                    <label htmlFor="title">Title:</label>
+                    <input type="text" name="title" value={movie.title} onChange={handleMovie} />
                 </div>
                 {
                     errors.title ?
@@ -52,7 +54,8 @@ const MovieForm = (props) => {
                 }
 
                 <div>
-                    <select placeholder="Genre" type="select" name="genre" value={movie.genre} onChange={handleMovie}>
+                    <label htmlFor="genre">Genre: </label>
+                    <select type="select" name="genre" value={movie.genre} onChange={handleMovie}>
                         <option selected value="s"> -- select a genre -- </option>
                         <option value="Action">Action</option>
                         <option value="Comedy">Comedy</option>
@@ -68,7 +71,8 @@ const MovieForm = (props) => {
                 }
 
                 <div>
-                    <input placeholder="Director" type="text" name="director" value={movie.director} onChange={handleMovie} />
+                    <label htmlFor="director">Director:</label>
+                    <input type="text" name="director" value={movie.director} onChange={handleMovie} />
                 </div>
                 {
                     errors.director ?
@@ -78,7 +82,7 @@ const MovieForm = (props) => {
 
                 <div>
                     <label htmlFor="releaseYear">Release Year:</label>
-                    <input placeholder="Release Year" type="text" name="releaseYear" value={movie.releaseYear} onChange={handleMovie} />
+                    <input type="text" name="releaseYear" value={movie.releaseYear} onChange={handleMovie} />
                 </div>
                 {
                     errors.releaseYear ?
@@ -89,7 +93,7 @@ const MovieForm = (props) => {
 
                 <div>
                     <label htmlFor="duration">Duration:</label>
-                    <input placeholder="Duration" type="text" name="duration" value={movie.duration} onChange={handleMovie} />
+                    <input type="text" name="duration" value={movie.duration} onChange={handleMovie} />
                 </div>
                 {
                     errors.duration ?
@@ -98,6 +102,7 @@ const MovieForm = (props) => {
                 }
 
                 <div>
+                    <label htmlFor="rating">Rating:</label>
                     <select name="rating" value={movie.rating} onChange={handleMovie}>
                         <option value> -- select a rating -- </option>
                         <option value="G">G</option>
@@ -114,7 +119,8 @@ const MovieForm = (props) => {
                 }
 
                 <div>
-                    <input placeholder="Poster" type="text" name="poster" value={movie.poster} onChange={handleMovie} />
+                    <label htmlFor="poster">Poster:</label>
+                    <input type="text" name="poster" value={movie.poster} onChange={handleMovie} />
                 </div>
                 {
                     errors.poster ?
@@ -123,7 +129,8 @@ const MovieForm = (props) => {
                 }
 
                 <div>
-                    <input className="descriptionInput" placeholder="Description" type="text" name="description" value={movie.description} onChange={handleMovie} />
+                    <label htmlFor="description">Description:</label>
+                    <input className="descriptionInput" type="text" name="description" value={movie.description} onChange={handleMovie} />
                 </div>
                 {
                     errors.description ?
@@ -133,6 +140,7 @@ const MovieForm = (props) => {
 
                 <button type="submit">Add Movie</button>
             </form>
+          </div>  
         </div>
     )
 }
