@@ -6,6 +6,7 @@ import DisplayAll from './components/DisplayAll'
 import UpdateMovie from './components/UpdateMovie'
 import DisplayOne from './components/DisplayOne'
 import Nav from './components/Nav'
+import StartPage from './components/StartPage'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <BrowserRouter>
       <Nav/>
       <Routes>
+        <Route element={<StartPage/>} path='/'/>
         <Route element={<MovieForm/>} path="/movies/add"/>
         <Route element={<DisplayAll/>} path="/movies"/>
         <Route element={<DisplayOne/>} path="/movies/:id"/>

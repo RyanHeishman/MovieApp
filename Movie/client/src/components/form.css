@@ -4,34 +4,44 @@ h4 {
 }
 
 .bodyForm{
-    padding: 50px;
     display: flex;
     justify-content: center;
-    max-width: 1280px;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.336);
-    width: 25%;
-    margin-top: 5%;
+    margin-top: 100px;
+}
+
+.middleForm {
+    display: flex;
+}
+
+.formLeft {
+    width: 350px;
+    margin-left: 50px;
+}
+
+.formRight {
+    width: 350px;
 }
 
 input {
     border: none;
     background-color: whitesmoke;
-    margin: 10px;
+    margin: 15px;
     border-radius: 10px;
     text-align: center;
-    color: whitesmoke;
-    width: 150px;
-    height: 50px;
+    color: rgb(0, 0, 0);
+    height: 40px;
+
 }
 
-/* select {
-    background-color: rgba(240, 248, 255, 0);
-    border: 1px solid white;
+select {
+    background-color: whitesmoke;
+    border: solid 1px whitesmoke;
     border-radius: 40px;
-    width: 150px;
-    height: 50px;
-} */
+    margin-left: 10px;
+    height: 40px;
+    margin: 15px;
+    
+}
 
 label {
     color: whitesmoke;
@@ -41,3 +51,13 @@ label {
     color: whitesmoke;
 }
 
+.movieIcon {
+    width: 160px;
+    height: 100px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

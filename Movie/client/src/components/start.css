@@ -1,0 +1,10 @@
+.startBody {
+    height: 900px;
+    background-image: url('./images/startBackground.png');
+}
+
+.startDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

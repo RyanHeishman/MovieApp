@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import './form.css'
+import pic from "./images/letsWatchMovieCamera.png"
 
 const UpdateMovie = (props) => {
 
@@ -46,12 +48,16 @@ const UpdateMovie = (props) => {
     }
 
     return (
-        <div>
-            <h2>Edit {movie.title}</h2>
-            <form onSubmit={submitHandler}>
+        <div className="bodyForm">
+        <form onSubmit={submitHandler}>
+        <img style={{height: '70px', marginLeft: '312px', marginBottom: '20px'}} src={pic} alt="" />
+        <h2 className="text-center">Update {movie.title}</h2>
+        <hr />
+        <div className="middleForm">
+            <div className="formLeft">
                 <div>
                     <label htmlFor="title">Title:</label>
-                    <input placeholder={movie.title} type="text" name="title" value={movie.title} onChange={handleMovie} />
+                    <input type="text" name="title" value={movie.title} onChange={handleMovie} />
                 </div>
                 {
                     errors.title ?
@@ -60,13 +66,13 @@ const UpdateMovie = (props) => {
                 }
 
                 <div>
-                    <label htmlFor="genre">Genre:</label>
-                    <select placeholder={movie.genre} type="select" name="genre" value={movie.genre} onChange={handleMovie}>
+                    <label htmlFor="genre">Genre: </label>
+                    <select type="select" name="genre" value={movie.genre} onChange={handleMovie}>
+                        <option selected value="s"> -- select a genre -- </option>
                         <option value="Action">Action</option>
                         <option value="Comedy">Comedy</option>
                         <option value="Drama">Drama</option>
                         <option value="Horror">Horror</option>
-                        <option value="Romance">Romance</option>
                         <option value="Sci-fi">Sci-fi</option>
                     </select>
                 </div>
@@ -95,11 +101,12 @@ const UpdateMovie = (props) => {
                         <p>{errors.releaseYear.message}</p> :
                         null
                 }
+            </div>
 
-
+            <div className="formRight">
                 <div>
                     <label htmlFor="duration">Duration:</label>
-                    <input type="number" name="duration" value={movie.duration} onChange={handleMovie} />
+                    <input type="text" name="duration" value={movie.duration} onChange={handleMovie} />
                 </div>
                 {
                     errors.duration ?
@@ -109,8 +116,8 @@ const UpdateMovie = (props) => {
 
                 <div>
                     <label htmlFor="rating">Rating:</label>
-                    <select type="text" name="rating" value={movie.rating} onChange={handleMovie}>
-                        <option selected value> -- select an option -- </option>
+                    <select name="rating" value={movie.rating} onChange={handleMovie}>
+                        <option value> -- select a rating -- </option>
                         <option value="G">G</option>
                         <option value="PG">PG</option>
                         <option value="PG-13">PG-13</option>
@@ -136,17 +143,21 @@ const UpdateMovie = (props) => {
 
                 <div>
                     <label htmlFor="description">Description:</label>
-                    <input type="text" name="description" value={movie.description} onChange={handleMovie} />
+                    <input className="descriptionInput" type="text" name="description" value={movie.description} onChange={handleMovie} />
                 </div>
                 {
                     errors.description ?
                         <p>{errors.description.message}</p> :
                         null
                 }
-
-                <button type="submit">Update Movie</button>
-            </form>
-        </div>
+            </div>
+            </div>
+            
+            <div className="button">
+                <button className="btn bg-secondary text-light" type="submit">Add Movie</button>
+            </div>
+        </form>
+      </div>  
     )
 }
 
