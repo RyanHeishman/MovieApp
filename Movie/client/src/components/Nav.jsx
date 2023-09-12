@@ -16,8 +16,8 @@ const Nav = (props) => {
     };
 
     const logo = {
-        height: '60px',
-        width: '100px',
+        height: '70px',
+        width: '120px',
     }
 
     return (

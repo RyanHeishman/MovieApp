@@ -7,6 +7,7 @@ import UpdateMovie from './components/UpdateMovie'
 import DisplayOne from './components/DisplayOne'
 import Nav from './components/Nav'
 import StartPage from './components/StartPage'
+import Action from './components/Action'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route element={<DisplayAll/>} path="/movies"/>
         <Route element={<DisplayOne/>} path="/movies/:id"/>
         <Route element={<UpdateMovie/>} path='/movies/:id/edit'/>
+        <Route element={<Action/>} path='/movies/action'/>
       </Routes>
     </BrowserRouter>
     </>

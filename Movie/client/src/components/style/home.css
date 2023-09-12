@@ -10,7 +10,7 @@ h1 {
 }
 
 .moviePoster:hover{
-  border: solid 3px rgba(21, 255, 0, 0.589);
+  border: solid 3px rgb(0, 183, 255);
   box-shadow: 10px 10px 22px rgb(0, 0, 0);
   transition: margin 0.2s ease-in-out;
   margin-top: -10px;
@@ -26,6 +26,7 @@ h1 {
   display: flex;
   overflow: auto;
   white-space: nowrap;
+
   /* justify-content: center; */
 }
 
@@ -43,6 +44,7 @@ hr {
 
 h6 {
   margin-top: 5px;
+  margin-bottom: 20px
 }
 
 .addMovie {
@@ -53,7 +55,7 @@ h6 {
 }
 
 .addMovieLink:hover{
-  color: rgba(21, 255, 0, 0.589);
+  color: rgb(0, 183, 255);
 }
 
 ::-webkit-scrollbar {
@@ -68,7 +70,7 @@ h6 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(21, 255, 0, 0.589);
+  background: rgb(0, 183, 255);
   border-radius: 10px;
   width: 10px;
 }

@@ -1,0 +1,9 @@
+.genreBody {
+    background-color: rgba(0, 204, 255, 0.438);
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 900px;
+}
+
+.genreRow {
+}

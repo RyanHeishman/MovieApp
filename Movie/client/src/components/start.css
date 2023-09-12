@@ -1,10 +1,21 @@
 .startBody {
-    height: 900px;
+    height: 700px;
     background-image: url('./images/startBackground.png');
 }
 
 .startDiv {
     display: flex;
     justify-content: center;
-    align-items: center;
+    height: 80px;
+    margin-bottom: 50px;
+
+}
+
+.flicklistPic {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.hi {
+    margin-top: 700px;
 }

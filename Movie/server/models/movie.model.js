@@ -16,6 +16,7 @@ const MovieSchema = new mongoose.Schema({
     },
     releaseYear: {type: Number,
         required: [true, 'You must add a release year'],
+        min: [1896, 'The year must be at least past 1896']
     },
     duration: {type: Number,
         required: [true, 'You must add a duration'],
@@ -25,7 +26,7 @@ const MovieSchema = new mongoose.Schema({
         required: [true, 'You must add a rating'],
     },
     poster: {type: String,
-        required: [false, ''],
+        required: [true, 'You must add an image link'],
     },
     description: {type: String,
         required: [true, 'You must add a description'],

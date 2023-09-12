@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
-import './form.css'
+import './style/form.css'
 import pic from "./images/letsWatchMovieCamera.png"
 
 const MovieForm = (props) => {
@@ -50,7 +50,7 @@ const MovieForm = (props) => {
                     </div>
                     {
                         errors.title ?
-                            <p>{errors.title.message}</p> :
+                            <p>⨂ {errors.title.message}</p> :
                             null
                     }
 
@@ -67,7 +67,7 @@ const MovieForm = (props) => {
                     </div>
                     {
                         errors.genre ?
-                            <p>{errors.genre.message}</p> :
+                            <p>⨂ {errors.genre.message}</p> :
                             null
                     }
 
@@ -77,7 +77,7 @@ const MovieForm = (props) => {
                     </div>
                     {
                         errors.director ?
-                            <p>{errors.director.message}</p> :
+                            <p>⨂ {errors.director.message}</p> :
                             null
                     }
 
@@ -87,7 +87,7 @@ const MovieForm = (props) => {
                     </div>
                     {
                         errors.releaseYear ?
-                            <p>{errors.releaseYear.message}</p> :
+                            <p>⨂ {errors.releaseYear.message}</p> :
                             null
                     }
                 </div>
@@ -99,7 +99,7 @@ const MovieForm = (props) => {
                     </div>
                     {
                         errors.duration ?
-                            <p>{errors.duration.message}</p> :
+                            <p>⨂ {errors.duration.message}</p> :
                             null
                     }
 
@@ -116,7 +116,7 @@ const MovieForm = (props) => {
                     </div>
                     {
                         errors.rating ?
-                            <p>{errors.rating.message}</p> :
+                            <p>⨂ {errors.rating.message}</p> :
                             null
                     }
 
@@ -126,7 +126,7 @@ const MovieForm = (props) => {
                     </div>
                     {
                         errors.poster ?
-                            <p>{errors.poster.message}</p> :
+                            <p>⨂ {errors.poster.message}</p> :
                             null
                     }
 
@@ -136,7 +136,7 @@ const MovieForm = (props) => {
                     </div>
                     {
                         errors.description ?
-                            <p>{errors.description.message}</p> :
+                            <p>⨂ {errors.description.message}</p> :
                             null
                     }
                 </div>

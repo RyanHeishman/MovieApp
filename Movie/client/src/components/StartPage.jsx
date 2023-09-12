@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import './start.css'
+import photo from './images/letsWatchlogo.png'
 
 
 const StartPage = (props) => {
@@ -9,11 +10,9 @@ const StartPage = (props) => {
 
     return (
         <div className='startBody'>
-            <div>
                 <div className='startDiv'>
-                    <Link to={'/movies'}><button style={{backgroundColor: 'rgba(21, 255, 0, 0.589)', marginTop: '750px'}} className='btn text-light'>Start your flicklist</button></Link>
+                    <h1 className='hi'>Welcome, start your<Link to={'/movies'} style={{color:'rgb(0, 183, 255)'}}><img className='flicklistPic' src={photo}/></Link></h1>
                 </div>
-            </div>
         </div>
     )
 }

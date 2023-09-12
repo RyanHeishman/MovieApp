@@ -61,3 +61,15 @@ label {
     justify-content: center;
     margin-top: 20px;
 }
+
+p {
+    color: whitesmoke;
+    border: solid 1px rgb(255, 45, 45);
+    border-radius: 10px;
+    width: 80%;
+    height: 60px;
+    padding: 5px;
+    text-align: center;
+    align-self: center;
+    background-color: rgb(255, 45, 45);
+}

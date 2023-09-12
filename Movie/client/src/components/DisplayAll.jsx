@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-import './home.css'
+import './style/home.css'
 
 const DisplayAll = (props) => {
 
@@ -23,7 +23,7 @@ const DisplayAll = (props) => {
                 <Link className='addMovieLink' to={'/movies/add'}>Add Movie</Link>
             </div>
             <hr />
-            <h1>Action</h1>
+            <Link to={'/movies/action'}><h1>Action</h1></Link>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
