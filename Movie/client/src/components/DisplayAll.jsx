@@ -23,7 +23,7 @@ const DisplayAll = (props) => {
                 <Link className='addMovieLink' to={'/movies/add'}>Add Movie</Link>
             </div>
             <hr />
-            <Link to={'/movies/action'}><h1>Action</h1></Link>
+            <Link to={'/movies/action'}><h1>Action ›</h1></Link>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
@@ -39,7 +39,7 @@ const DisplayAll = (props) => {
             }
             </div>
             <hr />
-            <h1>Comedy</h1>
+            <Link to={'/movies/comedy'}><h1>Comedy ›</h1></Link>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
@@ -55,7 +55,7 @@ const DisplayAll = (props) => {
             }
             </div>
             <hr />
-            <h1>Drama</h1>
+            <Link to={'/movies/drama'}><h1>Drama ›</h1></Link>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
@@ -71,7 +71,7 @@ const DisplayAll = (props) => {
             }
             </div>
             <hr />
-            <h1>Sci-fi</h1>
+            <Link to={'/movies/sci-fi'}><h1>Sci-Fi ›</h1></Link>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(
@@ -87,7 +87,7 @@ const DisplayAll = (props) => {
             }
             </div>
             <hr />
-            <h1>Horror</h1>
+            <Link to={'/movies/horror'}><h1>Horror ›</h1></Link>
             <div className='movieRow'>
             {
                 movies.map((movie)=>(

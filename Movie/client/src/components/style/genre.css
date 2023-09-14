@@ -1,9 +1,16 @@
 .genreBody {
-    background-color: rgba(0, 204, 255, 0.438);
+    margin: auto;
     max-width: 1280px;
-    margin: 0 auto;
-    height: 900px;
 }
 
-.genreRow {
+.gridBody {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 230px 230px 230px 230px;
+    grid-template-rows: 350px 350px 350px 350px;
 }

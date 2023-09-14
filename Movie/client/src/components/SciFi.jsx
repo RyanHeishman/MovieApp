@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './style/genre.css'
 
 
-const Action = (props) => {
+const SciFi = (props) => {
 
     const [movies, setMovies] = useState([])
 
@@ -20,13 +20,13 @@ const Action = (props) => {
 
     return (
         <div className='genreBody'>
-            <h1>Action</h1>
+            <h1>Sci-Fi</h1>
             <hr />
             <div className='gridBody'>
                 <div className='grid-container'>
                 {
                     movies.map((movie)=>(
-                        movie.genre === 'Action' ?
+                        movie.genre === 'Sci-fi' ?
                             <div className='grid-item'>
                                 <Link to={`/movies/${movie._id}`}><img className='moviePoster' src={movie.poster} alt="Movie Poster" /></Link>
                                 <h6>{movie.title}</h6>
@@ -40,4 +40,4 @@ const Action = (props) => {
     )
 }
 
-export default Action;
+export default SciFi;
