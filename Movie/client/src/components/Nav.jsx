@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import logoPic from './images/letsWatchLogo.png'
+import API from './API';
 
 const Nav = (props) => {
 
     const myStyle = {
-        height: '80px',
+        height: '50px',
         width: '100%',
-        backgroundImage: 'linear-gradient(black, rgba(0, 0, 0, 0))',
+        backgroundColor: 'black',
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
 
     };
@@ -23,7 +24,10 @@ const Nav = (props) => {
     return (
         <div>
             <nav style={myStyle}>
-                <Link to={'/movies'}><img style={logo} src={logoPic} alt="" /></Link>
+                {/* <Link to={'/movies'}><img style={logo} src={logoPic} alt="" /></Link> */}
+                <Link to={'/movies'}><h1>flicklist</h1></Link>
+                {/* <API/> */}
+                <h1>SignIn/SignOut</h1>
             </nav>
         </div>
     )

@@ -1,11 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import { userContext } from "../context/userContext";
 import './style/home.css'
 
 const DisplayAll = (props) => {
 
     const [movies, setMovies] = useState([])
+
+    const {loggedInUser, setLoggedInUser} = useContext(userContext);
+    const id = window.localStorage.getItem('userId');
+
+    useEffect(() => {
+        axios.get(`http://localhost:8000/api/loggedInUser/${id}`, {withCredentials: true})
+        .then((res)=>{
+            console.log(res);
+            setLoggedInUser(res.data)
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }, [])
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/movie')

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
+import { userContext } from "../context/userContext";
 import './style/form.css'
 import pic from "./images/letsWatchMovieCamera.png"
 
 const MovieForm = (props) => {
+
+    const {loggedInUser, setLoggedInUser} = useContext(userContext);
+    const id = window.localStorage.getItem('userId');
 
     const [movie, setMovie] = useState({
         title: '',
@@ -17,6 +21,17 @@ const MovieForm = (props) => {
         description: ''
     })
 
+    useEffect(() => {
+        axios.get(`http://localhost:8000/api/loggedInUser/${id}`, {withCredentials: true})
+        .then((res)=>{
+            console.log(res);
+            setLoggedInUser(res.data)
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }, [])
+
     const [errors, setErrors] = useState({})
     const navigate = useNavigate()
 
@@ -26,7 +41,7 @@ const MovieForm = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/movie', movie)
+        axios.post('http://localhost:8000/api/movie', movie, {withCredentials: true})
             .then((res)=>{
                 navigate('/movies')
             })
@@ -39,6 +54,7 @@ const MovieForm = (props) => {
     return (
         <div className="bodyForm">
             <form onSubmit={submitHandler}>
+            <input type="hidden" value={movie.userId} />
             <img style={{height: '70px', marginLeft: '312px', marginBottom: '20px'}} src={pic} alt="" />
             <h2 className="text-center">Let's add a movie to your list</h2>
             <hr />

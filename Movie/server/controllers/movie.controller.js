@@ -1,4 +1,5 @@
 const Movie = require('../models/movie.model')
+const jwt = require('jsonwebtoken')
 
 
 module.exports = {
@@ -19,10 +20,22 @@ module.exports = {
             })
     },
 
-    createMovie: (req, res) => {
-        Movie.create(req.body)
-        .then(movie => res.status(201).json(movie))
-        .catch(err => res.status(500).json(err));
+    createMovie: async (req, res) => {
+        try{
+            const decodedJwt = jwt.decode(req.cookies.userToken, {complete: true});
+            // console.log('LINE 20 CONTROLLER: ', decodedJwt.payload);
+            req.body.userId = decodedJwt.payload._id;
+            console.log('LINE 10 CONTROLLER: ', req.body);
+            const movie = await Movie.create(req.body);
+            res.status(201).json(movie);
+            // Movie.create(req.body)
+        }
+        // .then(movie => res.status(201).json(movie))
+        catch(err){
+            console.log(err)
+            res.status(500).json(err)
+        }
+        // .catch(err => res.status(500).json(err));
     },
 
     findOneMovie: (req, res) => {
