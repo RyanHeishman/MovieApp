@@ -16,6 +16,7 @@ import Login from './components/LogIn'
 import API from './components/API'
 import GetOne from './components/GetOne'
 
+
 function App() {
 
   return (
@@ -36,7 +37,8 @@ function App() {
         <Route element={<Login/>} path='/login'/>
         <Route element={<API/>} path='/api'/>
         <Route element={<GetOne/>} path='/movie/:movieId'/>
-      </Routes>
+        <Route element={<GetOne/>} path='/movie/:movieId'/>
+      </Routes> 
     </>
   )
 }

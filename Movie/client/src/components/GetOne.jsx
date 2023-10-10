@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { userContext } from "../context/userContext";
 import './style/getOne.css'
-
 
 const options = {
     method: 'GET',
@@ -18,15 +17,12 @@ const GetOne = (props) => {
     const [movie, setMovie] = useState({})
     const [movieTrailer, setMovieTrailer] = useState({})
 
-
     const {loggedInUser, setLoggedInUser} = useContext(userContext);
     const id = window.localStorage.getItem('userId');
     const {movieId} = useParams()
 
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
-        // .then(response => response.json())   
-        // .then(json => setResults(json.results))
         .then((res) => {
             setMovie(res.data)
         })
@@ -35,8 +31,6 @@ const GetOne = (props) => {
 
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, options)
-        // .then(response => response.json())   
-        // .then(json => setResults(json.results))
         .then((res) => {
             setMovieTrailer(res.data.results[0])
         })
@@ -45,15 +39,31 @@ const GetOne = (props) => {
 
     return (
         <div className="getOneBody">
+            
             <h1>{movie.title}</h1>
+            
             <div>
-                <div>
-                    <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
-                    <p style={{color: 'white'}}>{movie.overview}</p>
-                    <iframe width="1280" height="720" src={`https://www.youtube.com/embed/${movieTrailer.key}`}></iframe>
-                    <button type="submit">Add</button>
-                </div> 
+                <form>
+                    <div>
+                        <div className="posterTrailer">
+                            <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
+                            <iframe className="trailer" width="1280" height="720" src={`https://www.youtube.com/embed/${movieTrailer.key}`}></iframe>
+                        </div>
+                        <p style={{color: 'white'}}>{movie.overview}</p>
+                        <p style={{color: 'white'}}>{movie.runtime}</p>
+                        <button type="submit">Add</button>
+                    </div>
+                </form>
             </div>
+            
+            {/* <div>
+                {
+                    list.map((listing) => (
+                        <p style={{color:'white'}}>{listing.title}</p>
+                    ))
+                }
+            </div> */}
+
         </div>
     )
 }

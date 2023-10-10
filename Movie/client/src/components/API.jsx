@@ -75,7 +75,7 @@ const API = (props) => {
                             searchResults.map((result) => (
                                 <Link to={`/movie/${result.id}`}><div className="searchResult" key={result.id}>
                                         <img style={{width: '50px', height: '80px'}} src={`https://image.tmdb.org/t/p/w500${result.poster_path}`} alt="" />
-                                        <p style={{marginTop: '10px', marginLeft: '20px'}}>{result.title}</p>
+                                        <p style={{marginTop: '10px', marginLeft: '20px', color:"black"}}>{result.title}</p>
                                         <p style={{color: 'red'}}>{result.id}</p>
                                 </div></Link> 
                             ))
