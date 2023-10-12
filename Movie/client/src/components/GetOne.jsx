@@ -16,6 +16,7 @@ const GetOne = (props) => {
 
     const [movie, setMovie] = useState({})
     const [movieTrailer, setMovieTrailer] = useState({})
+    const [list, setList] = useState([])
 
     const {loggedInUser, setLoggedInUser} = useContext(userContext);
     const id = window.localStorage.getItem('userId');
@@ -37,6 +38,16 @@ const GetOne = (props) => {
         .catch(err => console.log(err))
     }, [])
 
+    const addToList = (e) => {
+        e.preventDefault()
+        axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
+        .then((res) => {
+            setList([...list, res.data])
+            console.log(list)
+        })
+        .catch(err => console.log(err))
+    }
+
     return (
         <div className="getOneBody">
             
@@ -51,18 +62,14 @@ const GetOne = (props) => {
                         </div>
                         <p style={{color: 'white'}}>{movie.overview}</p>
                         <p style={{color: 'white'}}>{movie.runtime}</p>
-                        <button type="submit">Add</button>
+                        <button type="submit" onClick={addToList}>Add</button>
                     </div>
                 </form>
             </div>
             
-            {/* <div>
-                {
-                    list.map((listing) => (
-                        <p style={{color:'white'}}>{listing.title}</p>
-                    ))
-                }
-            </div> */}
+            <div>
+
+            </div>
 
         </div>
     )

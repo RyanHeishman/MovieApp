@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userContext } from "../context/userContext";
 import { FaSearch } from 'react-icons/fa'
 import './style/api.css'
@@ -15,10 +15,10 @@ const options = {
 
 const API = (props) => {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
-    const [input, setInput] = useState('')
     const [searchResults, setSearchResults] = useState([])
+    const [input, setInput] = useState('')
 
     const {loggedInUser, setLoggedInUser} = useContext(userContext);
     const id = window.localStorage.getItem('userId');
@@ -38,8 +38,8 @@ const API = (props) => {
         axios.get(`https://api.themoviedb.org/3/search/movie?query=${input}&include_adult=false&language=en-US&page=1`, options)
         .then((res) => {
             setSearchResults(res.data.results);
-            console.log("setSearchResults: ", res.data.results)
-            console.log("searchResults: ", searchResults)
+            // console.log("setSearchResults: ", res.data.results)
+            // console.log("searchResults: ", searchResults)
         })
         .catch(err => console.log(err))
     }
@@ -49,40 +49,26 @@ const API = (props) => {
         getMovie(value)
     }
 
-
-    // const submitHandler = (e) => {
-    //     e.preventDefault();
-    //     axios.post('http://localhost:8000/api/movie', movie, {withCredentials: true})
-    //     .then((res)=>{
-    //             navigate('/api')
-    //         })
-    //         .catch((err)=>{
-    //             console.log(err)
-    //         })
-    // }
-
     return(
-        <div className="searchMain">
                 <div className="searchBarContainer">
-                
                     <div className="inputWrapper">
                         <FaSearch id="searchIcon" />
                         <input className="searchInput" placeholder="Type to search..." value={input} onChange={(e) => handleChange(e.target.value)}/>
                     </div>
-
+                    {searchResults.length != 0 ?
                     <div className="resultsList">
                         {
                             searchResults.map((result) => (
-                                <Link to={`/movie/${result.id}`}><div className="searchResult" key={result.id}>
+                                <a href={`/movie/${result.id}`}><div className="searchResult" key={result.id}>
                                         <img style={{width: '50px', height: '80px'}} src={`https://image.tmdb.org/t/p/w500${result.poster_path}`} alt="" />
                                         <p style={{marginTop: '10px', marginLeft: '20px', color:"black"}}>{result.title}</p>
                                         <p style={{color: 'red'}}>{result.id}</p>
-                                </div></Link> 
+                                </div></a>
                             ))
                         }
                     </div>
+                    : null}
                 </div>
-        </div>
     )
 }
 
