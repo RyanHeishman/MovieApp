@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import { userContext } from "../context/userContext";
-import GetOne from './GetOne';
+import './style/home.css'
 
 const options = {
     method: 'GET',
@@ -41,15 +41,119 @@ const Home = (props) => {
     }, [])
 
     return (
-        <div>
-            <h1>Hi</h1>
-            <div>
+        <div className='homeBody'>
+            <h2 className='genre'>Action</h2>
+            <div className='movieRow'>
                 {
                     movies.map((movie, key) => (
-                        <p>{movie.title}</p>
+                        movie.genre_ids.includes(28) ?
+                        <div>
+                            <div className='movieBox'>
+                                <a href={`/movie/${movie.id}`}><img className='moviePoster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" /></a>
+                                <p className='movieTitle'>{movie.title}</p>
+                            </div>
+                        </div> :
+                        null
                     ))
                 }
             </div>
+
+            <h2 className='genre'>Comedy</h2>
+            <div className='movieRow'>
+                {
+                    movies.map((movie, key) => (
+                        movie.genre_ids.includes(35) ?
+                        <div>
+                            <div className='movieBox'>
+                                <a href={`/movie/${movie.id}`}><img className='moviePoster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" /></a>
+                                <p className='movieTitle'>{movie.title}</p>
+                            </div>
+                        </div> :
+                        null
+                    ))
+                }
+            </div>
+
+            <h2 className='genre'>Drama</h2>
+            <div className='movieRow'>
+                {
+                    movies.map((movie, key) => (
+                        movie.genre_ids.includes(18) ?
+                        <div>
+                            <div className='movieBox'>
+                                <a href={`/movie/${movie.id}`}><img className='moviePoster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" /></a>
+                                <p className='movieTitle'>{movie.title}</p>
+                            </div>
+                        </div> :
+                        null
+                    ))
+                }
+            </div>
+
+            <h2 className='genre'>Horror</h2>
+            <div className='movieRow'>
+                {
+                    movies.map((movie, key) => (
+                        movie.genre_ids.includes(27) ?
+                        <div>
+                            <div className='movieBox'>
+                                <a href={`/movie/${movie.id}`}><img className='moviePoster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" /></a>
+                                <p className='movieTitle'>{movie.title}</p>
+                            </div>
+                        </div> :
+                        null
+                    ))
+                }
+            </div>
+
+            <h2 className='genre'>Documentary</h2>
+            <div className='movieRow'>
+                {
+                    movies.map((movie, key) => (
+                        movie.genre_ids.includes(99) ?
+                        <div>
+                            <div className='movieBox'>
+                                <a href={`/movie/${movie.id}`}><img className='moviePoster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" /></a>
+                                <p className='movieTitle'>{movie.title}</p>
+                            </div>
+                        </div> :
+                        null
+                    ))
+                }
+            </div>
+        
+            <h2 className='genre'>Romance</h2>
+            <div className='movieRow'>
+                {
+                    movies.map((movie, key) => (
+                        movie.genre_ids.includes(10749) ?
+                        <div>
+                            <div className='movieBox'>
+                                <a href={`/movie/${movie.id}`}><img className='moviePoster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" /></a>
+                                <p className='movieTitle'>{movie.title}</p>
+                            </div>
+                        </div> :
+                        null
+                    ))
+                }
+            </div>
+
+            <h2 className='genre'>Sc-Fi</h2>
+            <div className='movieRow'>
+                {
+                    movies.map((movie, key) => (
+                        movie.genre_ids.includes(878) ?
+                        <div>
+                            <div className='movieBox'>
+                                <a href={`/movie/${movie.id}`}><img className='moviePoster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" /></a>
+                                <p className='movieTitle'>{movie.title}</p>
+                            </div>
+                        </div> :
+                        null
+                    ))
+                }
+            </div>
+
         </div>
     )
 }

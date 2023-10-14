@@ -57,7 +57,7 @@ const GetOne = (props) => {
                 <form>
                     <div>
                         <div className="posterTrailer">
-                            <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
+                            <img className="moviePosterOne" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
                             <iframe className="trailer" width="1280" height="720" src={`https://www.youtube.com/embed/${movieTrailer.key}`}></iframe>
                         </div>
                         <p style={{color: 'white'}}>{movie.overview}</p>

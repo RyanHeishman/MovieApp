@@ -1,20 +1,28 @@
-.body {
+.homeBody {
   max-width: 1280px;
-  margin: 0 auto;
-  /* padding: 0 auto; */
-  /* text-align: center; */
+  margin: auto;
 }
 
-h1 {
-  font-weight: 900;
-}
-
-.moviePoster:hover{
+/* .moviePoster:hover{
   border: solid 3px rgb(0, 183, 255);
   box-shadow: 10px 10px 22px rgb(0, 0, 0);
   transition: margin 0.2s ease-in-out;
   margin-top: -10px;
   margin-right: 15px;
+} */
+
+.genre{
+  margin-top: 50px;
+}
+
+.movieRow{
+  display: flex;
+  overflow: auto;
+  white-space: inherit;
+}
+
+.movieBox{
+  margin: 10px;
 }
 
 .moviePoster{
@@ -22,12 +30,8 @@ h1 {
   width:  200px;
 }
 
-.movieRow{
-  display: flex;
-  overflow: auto;
-  white-space: nowrap;
-
-  /* justify-content: center; */
+.movieTitle{
+  color: white;
 }
 
 a {
@@ -40,22 +44,6 @@ hr {
   height: 1px;
   background-color: rgba(219, 219, 219, 0.623);
 
-}
-
-h6 {
-  margin-top: 5px;
-  margin-bottom: 20px
-}
-
-.addMovie {
-  display: flex;
-  justify-content: end;
-  margin-top: 20px;
-  font-weight: 600;
-}
-
-.addMovieLink:hover{
-  color: rgb(0, 183, 255);
 }
 
 ::-webkit-scrollbar {
