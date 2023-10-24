@@ -15,7 +15,6 @@ function App() {
     <>
         <Nav/>
         <Routes>
-            <Route element={<StartPage/>} path='/'/>
             <Route element={<Login/>} path='/login'/>
             <Route element={<GetOne/>} path='/movie/:movieId'/>
             <Route element={<Home/>} path='/home'/>

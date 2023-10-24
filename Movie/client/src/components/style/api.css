@@ -1,9 +1,11 @@
 .searchBarContainer{
     display: flex;
     flex-direction: column;
-    border: solid 2px yellow;
+    /* border: solid 2px yellow; */
     width: 1630px;
     align-items: center;
+    margin-top: 12px;
+    margin-right: 100px;
     /* margin-top: 5px; */
     z-index: 1;
     position: relative;
@@ -14,9 +16,9 @@
     background-color: white;
     width: 40%;
     border-radius: 10px;
-    height: 2.5rem;
+    height: 2.0rem;
     padding: 0 15px;
-    box-shadow: 0px 0px 8px #5c5c5c;
+    /* box-shadow: 0px 0px 8px #5c5c5c; */
     display: flex;
     align-items: center;
     /* border: solid 1px red; */
@@ -39,7 +41,7 @@
 }
 
 #searchIcon{
-    color: royalblue
+    color: rgb(47, 172, 239)
 }
 
 .resultsList{

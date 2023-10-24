@@ -26,6 +26,7 @@ const GetOne = (props) => {
         axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
         .then((res) => {
             setMovie(res.data)
+            console.log(res.data)
         })
         .catch(err => console.log(err))
     }, [])
@@ -52,7 +53,7 @@ const GetOne = (props) => {
         <div className="getOneBody">
             
             <h1>{movie.title}</h1>
-            
+            <p>{movie.genres}</p>
             <div>
                 <form>
                     <div>
